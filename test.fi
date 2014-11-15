@@ -1,0 +1,14 @@
+
+# replace v g[ i ].y
+def int DFS ( int x, int fa ):
+	REP_G ( i, x ):
+		if ( v != fa ):
+			DFS ( v, x )
+			dfs[ ++ ssz ] = 0
+
+scan n, m
+REP i, m:
+	int t1, t2
+	scan t1, t2
+	AE ( t1, t2 )
+	AE ( t2, t1 )
