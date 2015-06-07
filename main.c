@@ -20,7 +20,10 @@ int main (int argc, char const *argv[])
 		printf("Create output file error!\n");
 		return 0;
 	}
-	if(FalCompile()) printf("Compiling succeed\n");
-	else printf("Compiling failed!\n");
+	int succ;
+	succ = FalCompile();
+	if(succ == COMPILESUCCESS) printf("Compiling succeed\n");
+	else if(succ == COMPILEFAIL) printf("Compiling failed!\n");
+	else printf("Compiler Error!\n");
 	return 0;
 }

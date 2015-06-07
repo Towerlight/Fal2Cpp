@@ -1,6 +1,7 @@
 #include "falcompile.c"
 #include "falmatch.c"
 
+const int COMPILESUCCESS = 1, COMPILEFAIL = 0;
 const int codeLength = 1000;
 const int keywordAmount = 11;
 char codeInput[codeLength];
@@ -10,12 +11,6 @@ char keyword[200][20] =
 	"print",
 	"scan", 
 	"fopen", 
-	"int", 
-	"char", 
-	"double",
-	"short",  
-	"LL",
-	"LB",
 	"REP", 
 	"REP_0", 
 	"REP_G", 
@@ -28,31 +23,11 @@ char keyword[200][20] =
 };
 int keyLen[] = 
 {
-	5, 
-	4, 
-	5, 
-	3, 
-	5, 
-	5, 
-	6, 
-	3, 
-	3, 
-	3, 
-	3
+	// To be completed
 };
 int argAmount[] = 
 {
-	-1, 
-	-1, 
-	1, 
-	2, 
-	2, 
-	2, 
-	2, 
-	3, 
-	3, 
-	1, 
-	2
+	// To be completed
 };
 FILE *fin, *fout;
 int len, linecnt;

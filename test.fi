@@ -1,8 +1,8 @@
 
-# replace v g[ i ].y
+replace v g[ i ].y
 def int DFS ( int x, int fa ):
-	REP_G ( i, x ):
-		if ( v != fa ):
+	REP_G i, x:
+		if v != fa:
 			DFS ( v, x )
 			dfs[ ++ ssz ] = 0
 

@@ -5,7 +5,7 @@ int FalCompile()
 	linecnt = 0;
 	while(fgets(codeInput, 10000000, fin) != EOF)
 	{
-		int matching, tabcnt;
+		int matching, tabcnt, succ;
 		int cur, key, tmp;
 		matching = 0;
 		tabcnt = 0;
@@ -23,7 +23,7 @@ int FalCompile()
 					if(matching)
 					{
 						printf("(Error) Line %d: Keyword overlapped!\n", linecnt);
-						return 0;
+						return COMPILEFAIL;
 					}
 					matching = key;
 					break;
@@ -31,7 +31,7 @@ int FalCompile()
 			}
 			if(matching)
 			{
-				if (!Match(matching, cur)) return 0;
+				if ((succ = Match(matching, cur)) != 1) return succ;
 				break;
 			}
 		}
@@ -41,5 +41,5 @@ int FalCompile()
 			fputs(codeInput, fout);
 		}
 	}
-	return 1;
+	return COMPILESUCCESS;
 }
